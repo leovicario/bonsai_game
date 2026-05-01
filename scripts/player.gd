@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @onready var interaction_area = $InteractionArea
 
+var hasBonsai = false
+
 func get_input():
 
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -30,13 +32,27 @@ func animate():
 
 func _physics_process(_delta):
 	animate()
-	interact()
+	pickupBonsai()
+	dropBonsai()
 	get_input()
 	move_and_slide()
 	
 
-func interact():
-	if Input.is_action_just_pressed("interact"):
-		var target_areas = interaction_area.get_overlapping_areas()
-		if target_areas.size() > 0:
-			print(target_areas[0].name)
+func pickupBonsai():
+	if Input.is_action_just_pressed("pickup"):
+		var target = interaction_area.get_overlapping_areas()
+		if target.size() > 0:
+			var bonsai = target[0].get_parent().get_parent()
+			print(bonsai.name)
+			bonsai.pickup(self)
+			hasBonsai = true
+
+func dropBonsai():
+	if Input.is_action_just_pressed("interact") and hasBonsai == true:
+		var target = interaction_area.get_overlapping_areas()
+		if target.size() > 0:
+			var bonsai = target[0].get_parent().get_parent()
+			print(bonsai.name)
+			bonsai.drop(self)
+		print('dropping bonsai')
+		hasBonsai = false

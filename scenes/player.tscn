@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dftrpkfy22rxb"]
 
-[ext_resource type="Script" uid="uid://d1xao1h1prrv0" path="res://scripts/character_body_2d.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://d1xao1h1prrv0" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c34gst01exdel" path="res://assets/characters/player.png" id="2_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
@@ -51,6 +51,12 @@ animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerBody" unique_id=1457458746]
 shape = SubResource("CircleShape2D_qlg0r")
+
+[node name="HoldPoint" type="Node2D" parent="playerBody" unique_id=1989326420]
+light_mask = 7
+visibility_layer = 7
+z_index = 5
+position = Vector2(0, -12)
 
 [node name="Camera2D" type="Camera2D" parent="playerBody" unique_id=1925994713]
 zoom = Vector2(3, 3)

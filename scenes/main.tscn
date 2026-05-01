@@ -175,6 +175,12 @@ visibility_layer = 15
 z_index = 3
 position = Vector2(320, 192)
 
+[node name="bonsai2" parent="Garden" unique_id=1407486508 instance=ExtResource("2_tbgi4")]
+light_mask = 7
+visibility_layer = 15
+z_index = 3
+position = Vector2(320, 224)
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=1629398207]
 
 [node name="Control" type="Control" parent="UI" unique_id=970069664]
