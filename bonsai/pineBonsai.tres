@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="bonsaiData" format=3 uid="uid://b2w63kgci6531"]
+
+[ext_resource type="Script" uid="uid://5mmqj7fa6ohg" path="res://bonsai/bonsaiData.gd" id="1_7g1hs"]
+
+[resource]
+script = ExtResource("1_7g1hs")
+temperature = 37.5
+metadata/_custom_type_script = "uid://5mmqj7fa6ohg"

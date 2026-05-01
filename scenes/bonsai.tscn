@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dhit85uccnv5r"]
+
+[ext_resource type="Script" uid="uid://brbec42b40reo" path="res://scenes/bonsai.gd" id="1_6rffb"]
+[ext_resource type="Texture2D" uid="uid://cnhkjrhh7whyy" path="res://assets/bonsai/bonsai-01.png" id="1_scyo0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_scyo0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6rffb"]
+radius = 13.0
+
+[node name="Bonsai" type="Node2D" unique_id=1499985909]
+visibility_layer = 2
+z_index = 1
+script = ExtResource("1_6rffb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1898463917]
+collision_layer = 3
+collision_mask = 3
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1661914072]
+shape = SubResource("CircleShape2D_scyo0")
+
+[node name="bonsaiArea" type="Area2D" parent="StaticBody2D" unique_id=216339182]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/bonsaiArea" unique_id=1935364546]
+shape = SubResource("CircleShape2D_6rffb")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=422260621]
+light_mask = 2
+visibility_layer = 2
+texture = ExtResource("1_scyo0")

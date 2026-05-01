@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://1crcdal5o21w"]
+
+[ext_resource type="Theme" uid="uid://dylbvytojfg5s" path="res://UI/bonsaiTheme.tres" id="1_svkwa"]
+
+[node name="BonsaiInfo" type="Control" unique_id=2113012054]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -760.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_svkwa")
+
+[node name="Control" type="Control" parent="." unique_id=226802854]
+anchors_preset = 0
+offset_right = 152.0
+offset_bottom = 122.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1755081895]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel" unique_id=348686679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="Control/Panel/MarginContainer" unique_id=1373023163]
+layout_mode = 2
+vertical = true
+
+[node name="bonsai_name" type="Label" parent="Control/Panel/MarginContainer/FlowContainer" unique_id=830668535]
+layout_mode = 2
+text = "bonsai.species"
+
+[node name="bonsai_health" type="Label" parent="Control/Panel/MarginContainer/FlowContainer" unique_id=969937351]
+layout_mode = 2
+text = "bonsai.health"
+
+[node name="bonsai_growth" type="Label" parent="Control/Panel/MarginContainer/FlowContainer" unique_id=440317666]
+layout_mode = 2
+text = "bonsai.growth"

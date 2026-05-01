@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://dylbvytojfg5s"]
+
+[sub_resource type="SystemFont" id="SystemFont_n7mpo"]
+
+[resource]
+Label/font_sizes/font_size = 12
+Label/fonts/font = SubResource("SystemFont_n7mpo")
+MarginContainer/constants/margin_bottom = 16
+MarginContainer/constants/margin_left = 16
+MarginContainer/constants/margin_right = 16
+MarginContainer/constants/margin_top = 16
