@@ -2,10 +2,55 @@
 
 [sub_resource type="SystemFont" id="SystemFont_n7mpo"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7mpo"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1t0q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8s7s4"]
+bg_color = Color(0.91764706, 0.83137256, 0.6666667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.07058824)
+shadow_size = 4
+
 [resource]
+FlowContainer/constants/h_separation = 4
+FlowContainer/constants/v_separation = 4
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0.2509804, 0.2509804, 0.2509804, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 12
 Label/fonts/font = SubResource("SystemFont_n7mpo")
+Label/styles/focus = SubResource("StyleBoxFlat_n7mpo")
+Label/styles/normal = SubResource("StyleBoxEmpty_r1t0q")
 MarginContainer/constants/margin_bottom = 16
 MarginContainer/constants/margin_left = 16
 MarginContainer/constants/margin_right = 16
 MarginContainer/constants/margin_top = 16
+Panel/styles/panel = SubResource("StyleBoxFlat_8s7s4")

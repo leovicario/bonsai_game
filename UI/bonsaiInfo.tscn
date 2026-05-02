@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1crcdal5o21w"]
 
 [ext_resource type="Theme" uid="uid://dylbvytojfg5s" path="res://UI/bonsaiTheme.tres" id="1_svkwa"]
+[ext_resource type="Script" uid="uid://cc31qmr1vrqu0" path="res://scripts/bonsai_info.gd" id="2_5dyby"]
 
 [node name="BonsaiInfo" type="Control" unique_id=2113012054]
 layout_mode = 3
@@ -12,6 +13,7 @@ offset_bottom = -360.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_svkwa")
+script = ExtResource("2_5dyby")
 
 [node name="Control" type="Control" parent="." unique_id=226802854]
 anchors_preset = 0

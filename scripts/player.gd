@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-@export var speed = 100
+@export var speed : float = 100.0
 
 @onready var interaction_area = $InteractionArea
 
 var hasBonsai = false
+var bonsai = null
 
 func get_input():
-
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 
@@ -33,26 +33,31 @@ func animate():
 func _physics_process(_delta):
 	animate()
 	pickupBonsai()
-	dropBonsai()
 	get_input()
 	move_and_slide()
 	
 
 func pickupBonsai():
-	if Input.is_action_just_pressed("pickup"):
-		var target = interaction_area.get_overlapping_areas()
-		if target.size() > 0:
-			var bonsai = target[0].get_parent().get_parent()
-			print(bonsai.name)
-			bonsai.pickup(self)
-			hasBonsai = true
+	if Input.is_action_just_pressed("interact"):
+		
+		var areas = interaction_area.get_overlapping_areas()
+		for area in areas:
+			if area.name == "bonsaiArea":
+				bonsai = area.get_parent().get_parent()
+			
+			if hasBonsai == false and bonsai:
+				bonsai.pickup(self)
+				hasBonsai = true
+			elif hasBonsai == true and bonsai:
+				bonsai.drop(self)
+				var area_items = interaction_area.get_overlapping_areas()
+				for area_item in area_items:
+					if area_item.name == "shippingBoxArea":
+						shipBonsai()
+				hasBonsai = false
 
-func dropBonsai():
-	if Input.is_action_just_pressed("interact") and hasBonsai == true:
-		var target = interaction_area.get_overlapping_areas()
-		if target.size() > 0:
-			var bonsai = target[0].get_parent().get_parent()
-			print(bonsai.name)
-			bonsai.drop(self)
-		print('dropping bonsai')
-		hasBonsai = false
+func shipBonsai():
+	bonsai.queue_free()
+	GameManager.update_money(2540)
+	print("shipped!")
+	hasBonsai = false

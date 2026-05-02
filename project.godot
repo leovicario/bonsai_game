@@ -15,12 +15,16 @@ run/main_scene="uid://b3j3xbhcuetq5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://brud7c2e2mtrr"
+
 [display]
 
-window/size/viewport_width=760
+window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
+window/stretch/aspect="keep_width"
 
 [gui]
 

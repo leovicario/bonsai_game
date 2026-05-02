@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dhkiabsfmsxlg"]
+
+[ext_resource type="Texture2D" uid="uid://bk15eq3td5xgu" path="res://assets/buildings/shipping_box.png" id="1_50omh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50omh"]
+size = Vector2(30, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gik1m"]
+size = Vector2(26, 29)
+
+[node name="ShippingBox" type="Node2D" unique_id=220616374]
+light_mask = 0
+visibility_layer = 3
+
+[node name="ShippingBoxFront" type="Sprite2D" parent="." unique_id=532716604]
+visibility_layer = 3
+z_index = 1
+position = Vector2(0, 8)
+texture = ExtResource("1_50omh")
+region_enabled = true
+region_rect = Rect2(0, 16, 32, 16)
+
+[node name="ShippingBoxBack" type="Sprite2D" parent="." unique_id=1782764638]
+z_index = 2
+position = Vector2(0, -8)
+texture = ExtResource("1_50omh")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=354519858]
+collision_layer = 3
+collision_mask = 0
+
+[node name="shippingBoxCollision" type="CollisionShape2D" parent="StaticBody2D" unique_id=2066556054]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_50omh")
+
+[node name="shippingBoxArea" type="Area2D" parent="StaticBody2D" unique_id=197938750]
+
+[node name="shippingBoxArea2D" type="CollisionShape2D" parent="StaticBody2D/shippingBoxArea" unique_id=124093872]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_gik1m")

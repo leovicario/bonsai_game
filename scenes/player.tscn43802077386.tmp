@@ -38,6 +38,7 @@ radius = 16.0
 
 [node name="player" type="CharacterBody2D" unique_id=938387153]
 script = ExtResource("1_g2els")
+speed = null
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=147560873]
 sprite_frames = SubResource("SpriteFrames_dqkch")
