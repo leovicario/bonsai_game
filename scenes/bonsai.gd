@@ -2,23 +2,24 @@ extends Node2D
 
 class_name BonsaiController
 
-@onready var bonsai_sprite: Sprite2D = $StaticBody2D/Sprite2D
+@onready var bonsai_sprite: Sprite2D = $StaticBody2D/Sprite2D 
 
-@export var bonsai: bonsaiData = preload("res://bonsai/ficusBonsai.tres")
+@export var bonsai: bonsaiData = preload("res://bonsai/ficusBonsai.tres").duplicate()
 
 func _process(_delta):
-	# call the resource methods every frame
-	grow()
 	changeStage()
 
 func _ready():
-	print(bonsai.health)
-	
+	pass
 
-func grow():
-	if Input.is_action_just_pressed("pickup"):
-		if bonsai.growth < 100:
-			bonsai.growth = bonsai.growth + 10
+
+func grow(player):
+	if player and Inventory.active_slot == 0 and Input.is_action_just_pressed("interact"):
+		if self.bonsai.growth < 100:
+			self.bonsai.growth = self.bonsai.growth + 10
+	elif player and Inventory.active_slot == 1 and Input.is_action_just_pressed("interact"):
+		if self.bonsai.growth > 0:
+			self.bonsai.growth = self.bonsai.growth -10
 
 
 func changeStage():

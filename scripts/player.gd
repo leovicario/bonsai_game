@@ -11,6 +11,13 @@ func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 
+func check_collision():
+	var areas = interaction_area.get_overlapping_areas()
+	for area in areas:
+		if area.name == "bonsaiArea":
+			bonsai = area.get_parent().get_parent()
+			return bonsai
+
 func animate():
 	var animated_sprite = $Sprite2D
 	if  Input.is_action_pressed("left") or Input.is_action_pressed("up") :
@@ -35,10 +42,11 @@ func _physics_process(_delta):
 	pickupBonsai()
 	get_input()
 	move_and_slide()
+	waterBonsai()
 	
 
 func pickupBonsai():
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("pickup"):
 		
 		var areas = interaction_area.get_overlapping_areas()
 		for area in areas:
@@ -61,3 +69,10 @@ func shipBonsai():
 	GameManager.update_money(2540)
 	print("shipped!")
 	hasBonsai = false
+
+func waterBonsai():
+	var bonsai = check_collision()
+	if Inventory.active_slot == 0 and bonsai:
+		bonsai.grow(self)
+	elif Inventory.active_slot == 1 and bonsai:
+		bonsai.grow(self)

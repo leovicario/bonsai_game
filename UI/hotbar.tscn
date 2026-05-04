@@ -1,5 +1,20 @@
 [gd_scene format=3 uid="uid://co07v1vo2nvwi"]
 
+[ext_resource type="Texture2D" uid="uid://6nv3a2d0rtoj" path="res://tools/wateringcan.png" id="2_iqjj6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_721nr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8555797, 0.82427216, 0.80173385, 1)
+corner_detail = 2
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
 [node name="hotbar" type="Control" unique_id=1168526704]
 layout_mode = 3
 anchors_preset = 15
@@ -22,15 +37,32 @@ alignment = 1
 [node name="hotbar1" type="Panel" parent="HBoxContainer" unique_id=898387915]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_721nr")
+
+[node name="hobtbar1Sprite" type="Sprite2D" parent="HBoxContainer/hotbar1" unique_id=524611486]
+texture = ExtResource("2_iqjj6")
+centered = false
 
 [node name="hotbar2" type="Panel" parent="HBoxContainer" unique_id=494350234]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_721nr")
+
+[node name="hobtbar2Sprite" type="Sprite2D" parent="HBoxContainer/hotbar2" unique_id=566245831]
+centered = false
 
 [node name="hotbar3" type="Panel" parent="HBoxContainer" unique_id=736834791]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_721nr")
+
+[node name="hobtbar3Sprite" type="Sprite2D" parent="HBoxContainer/hotbar3" unique_id=286682471]
+centered = false
 
 [node name="hotbar4" type="Panel" parent="HBoxContainer" unique_id=1708450102]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_721nr")
+
+[node name="hobtbar4Sprite" type="Sprite2D" parent="HBoxContainer/hotbar4" unique_id=292712744]
+centered = false
